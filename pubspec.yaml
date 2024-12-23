@@ -38,6 +38,7 @@ dependencies:
   readmore: ^3.0.0
   google_maps_flutter:
   get:
+  font_awesome_flutter:
 
 dev_dependencies:
   flutter_test:

@@ -6,6 +6,7 @@ import 'package:home_rent/house_model.dart';
 Color colorBg = Color(int.parse("0xFFF7F7F7"));
 Color textColor = Colors.grey;
 Color secondaryTextColor = Color(int.parse("0xFFD4D4D4"));
+Color menuColor = Color(int.parse("0xFF2A6586"));
 const place = LatLng(23.737789, 90.401332);
 
 const images = [

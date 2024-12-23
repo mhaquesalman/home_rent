@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:home_rent/custom_drawer_screen.dart';
 import 'package:home_rent/details_product.dart';
 import 'package:home_rent/home_screen.dart';
 
@@ -20,7 +21,7 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
         scaffoldBackgroundColor: Colors.white
       ),
-      home: HomeScreen(),
+      home: CustomDrawerScreen()
     );
   }
 }
