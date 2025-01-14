@@ -1,18 +1,18 @@
 class HouseModel {
-  final String title;           // House name
-  final String subtitle;        // House address
-  final int bedrooms;           // Number of bedrooms
-  final int bathrooms;          // Number of bathrooms
-  final String description;     // Short description
-  final String imageUrl;        // Image URL
-  final double rentAmount;      // Rent amount
-  final String ownerName;       // Owner name
+  final String title;
+  final String subtitle;
+  final int bedrooms;
+  final int bathrooms;
+  final String description;
+  final String imageUrl;
+  final double rentAmount;
+  final String ownerName;
 
   HouseModel({
     required this.title,
     required this.subtitle,
-    required this.bedrooms,
-    required this.bathrooms,
+    this.bedrooms = 0,
+    this.bathrooms = 0,
     required this.description,
     required this.imageUrl,
     required this.rentAmount,

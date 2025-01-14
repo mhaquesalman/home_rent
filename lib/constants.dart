@@ -1,5 +1,6 @@
 import 'dart:ui';
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:home_rent/house_model.dart';
 
@@ -8,6 +9,25 @@ Color textColor = Colors.grey;
 Color secondaryTextColor = Color(int.parse("0xFFD4D4D4"));
 Color menuColor = Color(int.parse("0xFF2A6586"));
 const place = LatLng(23.737789, 90.401332);
+
+
+class Menu {
+  final String title;
+  final IconData icon;
+  Menu(this.title, this.icon);
+}
+
+List<Menu> listMenu = [
+  Menu("Home", Icons.home),
+  Menu("Profile", Icons.person),
+  Menu("Nearby", Icons.map),
+  Menu("Bookmark", Icons.bookmark),
+  Menu("Notification", FontAwesomeIcons.bell),
+  Menu("Message", FontAwesomeIcons.comment),
+  Menu("Settings", FontAwesomeIcons.gear),
+  Menu("Help", FontAwesomeIcons.circleInfo),
+  Menu("Logout", FontAwesomeIcons.powerOff),
+];
 
 const images = [
   "https://cdn.pixabay.com/photo/2022/04/10/19/33/house-7124141_1280.jpg",

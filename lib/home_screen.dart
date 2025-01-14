@@ -39,90 +39,103 @@ class HomeScreen extends StatelessWidget {
           ],
         ),
       ),
-      body: Padding(
-        padding: const EdgeInsets.all(16.0),
-        child: Column(
-          children: [
-            // Search Bar
-            Row(
-              children: [
-                Expanded(
-                  child: TextField(
-                    decoration: InputDecoration(
-                      prefixIcon: Icon(Icons.search_rounded, color: textColor,),
-                      hintStyle: TextStyle(fontWeight: FontWeight.normal, color: textColor),
-                      hintText: "Search address, or near you",
-                      border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(10),
-                        borderSide: BorderSide.none,
+      body: SingleChildScrollView(
+        child: Padding(
+          padding: const EdgeInsets.all(16.0),
+          child: Column(
+            children: [
+              // Search Bar
+              Row(
+                children: [
+                  Expanded(
+                    child: TextField(
+                      decoration: InputDecoration(
+                        prefixIcon: Icon(Icons.search_rounded, color: textColor,),
+                        hintStyle: TextStyle(fontWeight: FontWeight.normal, color: textColor),
+                        hintText: "Search address, or near you",
+                        border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(10),
+                          borderSide: BorderSide.none,
+                        ),
+                        fillColor: colorBg,
+                        filled: true,
                       ),
-                      fillColor: colorBg,
-                      filled: true,
                     ),
                   ),
-                ),
-                SizedBox(width: 8),
-                Container(
-                  padding: EdgeInsets.all(10),
-                  decoration: BoxDecoration(
-                    gradient: gradientBackground(),
-                    borderRadius: BorderRadius.circular(10),
-                  ),
-                  child: Image.asset("assets/images/settings.png", width: 28, height: 28,),
-                )
-              ],
-            ),
-
-            SizedBox(height: 16),
-
-            // Categories
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                _buildCategoryChip("House", true),
-                _buildCategoryChip("Apartment", false),
-                _buildCategoryChip("Hotel", false),
-                _buildCategoryChip("Villa", false),
-              ],
-            ),
-
-            SizedBox(height: 16),
-
-            // "Near from you" section
-            _buildSectionHeader("Near from you"),
-
-            SizedBox(height: 8),
-
-            SingleChildScrollView(
-              scrollDirection: Axis.horizontal,
-              child: Row(
-                children: [
-                  _buildPropertyCard("Dreamsville House", "Jl Sultan Iskandar Muda", "1.8 km"),
                   SizedBox(width: 8),
-                  _buildPropertyCard("Ascot House", "Jl Cilandak Tengah", "2.5 km"),
+                  Container(
+                    padding: EdgeInsets.all(10),
+                    decoration: BoxDecoration(
+                      gradient: gradientBackground(),
+                      borderRadius: BorderRadius.circular(10),
+                    ),
+                    child: Image.asset("assets/images/settings.png", width: 28, height: 28,),
+                  )
                 ],
               ),
-            ),
-
-            SizedBox(height: 16),
-
-            // "Best for you" section
-            _buildSectionHeader("Best for you"),
-
-            SizedBox(height: 8),
-
-            Expanded(
-              child: ListView(
+        
+              SizedBox(height: 16),
+        
+              // Categories
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  _buildListProperty("Orchard House", "Rp. 2.500.000.000 / Year", 6, 4),
-                  _buildListProperty("The Hollies House", "Rp. 2.000.000.000 / Year", 5, 3),
-                  _buildListProperty("San Francisco House", "Rp. 3.000.000.000 / Year", 8, 6),
-                  _buildListProperty("San Francisco House", "Rp. 3.000.000.000 / Year", 8, 6),
-                  _buildListProperty("San Francisco House", "Rp. 3.000.000.000 / Year", 8, 6),
+                  _buildCategoryChip("House", true),
+                  _buildCategoryChip("Apartment", false),
+                  _buildCategoryChip("Hotel", false),
+                  _buildCategoryChip("Villa", false),
                 ],
               ),
-            ),
-          ],
+              SizedBox(height: 50,),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  _buildCategoryChip("House", true),
+                  _buildCategoryChip("Apartment", false),
+                  _buildCategoryChip("Hotel", false),
+                  _buildCategoryChip("Villa", false),
+                ],
+              ),
+        
+              SizedBox(height: 16),
+        
+              // "Near from you" section
+              _buildSectionHeader("Near from you"),
+        
+              SizedBox(height: 8),
+        
+              SingleChildScrollView(
+                scrollDirection: Axis.horizontal,
+                child: Row(
+                  children: [
+                    _buildPropertyCard("Dreamsville House", "Jl Sultan Iskandar Muda", "1.8 km"),
+                    SizedBox(width: 8),
+                    _buildPropertyCard("Ascot House", "Jl Cilandak Tengah", "2.5 km"),
+                  ],
+                ),
+              ),
+        
+              SizedBox(height: 16),
+        
+              // "Best for you" section
+              _buildSectionHeader("Best for you"),
+        
+              SizedBox(height: 8),
+        
+              Container(
+                height: 300,
+                child: ListView(
+                  children: [
+                    _buildListProperty("Orchard House", "Rp. 2.500.000.000 / Year", 6, 4),
+                    _buildListProperty("The Hollies House", "Rp. 2.000.000.000 / Year", 5, 3),
+                    _buildListProperty("San Francisco House", "Rp. 3.000.000.000 / Year", 8, 6),
+                    _buildListProperty("San Francisco House", "Rp. 3.000.000.000 / Year", 8, 6),
+                    _buildListProperty("San Francisco House", "Rp. 3.000.000.000 / Year", 8, 6),
+                  ],
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );
